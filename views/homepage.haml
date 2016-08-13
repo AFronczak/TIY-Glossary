@@ -1,1 +1,9 @@
 %h1 This is the homepage!
+%h2 Five most recent terms!
+%ul#selector
+  -@lastfive.each do |term|
+    %li
+      %a(href = "/terms/#{term.id}")
+        =term.name
+%a(href = "/terms")
+  List of terms
