@@ -1,0 +1,23 @@
+%h1 term
+%ul
+  %li
+    %p Name:
+    =@term.name
+  %li
+    %p definition:
+    =@term.definition
+  %li
+    %p Author:
+    =@term.author
+  %li
+    %p Web Link:
+    =@term.web_link
+  %li
+    %p Category ID:
+    =@term.category_id
+%p
+  %a(href = "/terms/#{@term.id}/edit")
+    edit
+%p
+  %a(href = "/")
+    Home

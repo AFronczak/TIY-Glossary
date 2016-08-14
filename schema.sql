@@ -9,8 +9,8 @@ CREATE TABLE categories(id INTEGER PRIMARY KEY AUTOINCREMENT,
                          name varchar,
                          subject varchar);
 
-INSERT INTO categories VALUES (NULL, 'Front End Engineering', 'All words related to Ruby and other front-end engineering');
-INSERT INTO categories VALUES (NULL, 'Back End Engineering', 'All words related to Ruby and other back-end engineering');
+INSERT INTO categories VALUES (NULL, 'JavaScript', 'Front-End Engineering');
+INSERT INTO categories VALUES (NULL, 'Active Record', 'Back-End Engineering');
 
 
 

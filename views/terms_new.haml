@@ -1,0 +1,21 @@
+%h1 Enter a new term
+%form(action="/term" method="post")
+  %ul
+    %li
+      %label name
+      %input
+    %li
+      %label definition
+      %input
+    %li
+      %label author
+      %input
+    %li
+      %label web_link
+      %input
+    %li
+      %label category_id
+      %input
+  %input(type="submit")
+%a(href = "/")
+  Home

@@ -26,3 +26,37 @@ get "/terms" do
 
   haml :terms
 end
+
+get "/terms/new" do
+  @terms = Term.all
+
+  haml :terms_new
+end
+
+#show
+get "/terms/:id" do
+  id = params["id"]
+  @term = Term.find_by(id: id)
+
+  haml :terms_show
+end
+
+
+put '/terms/:id' do
+  id = params["id"]
+  term = Term.find_by(id: id)
+  # if term
+  #   term.update_attributes(params[:term])
+  #   redirect "/terms/#{term.id}"
+  # else
+    redirect "/"
+  # end
+end
+
+#edit
+get "/terms/:id/edit" do
+  id = params["id"]
+  @term = Term.find_by(id: id)
+
+  haml :terms_edit
+end
