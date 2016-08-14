@@ -7,11 +7,6 @@ require 'sinatra'
 require 'sinatra/reloader' if development?
 
 
-# terms = Term.all
-# terms.each do
-#   puts "#{terms.name}"
-# end
-
 get "/" do
   @terms = Term.all
   @categories = Category.all
@@ -41,16 +36,16 @@ get "/terms/:id" do
   haml :terms_show
 end
 
-
+#put update
 put '/terms/:id' do
   id = params["id"]
   term = Term.find_by(id: id)
-  # if term
-  #   term.update_attributes(params[:term])
-  #   redirect "/terms/#{term.id}"
-  # else
+  if term
+    term.update_attributes(params[:term])
+    redirect "/terms/#{term.id}"
+  else
     redirect "/"
-  # end
+  end
 end
 
 #edit
