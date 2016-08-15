@@ -4,7 +4,7 @@ require 'active_record'
 # use Rack::MethodOveride
 # use Rack::Flash
 
-# ActiveRecord::Base.logger = Logger.new(STDOUT)
+ActiveRecord::Base.logger = Logger.new(STDOUT)
 ActiveRecord::Base.establish_connection(
   adapter:  "sqlite3",
   database: "playground.db"

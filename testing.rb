@@ -28,6 +28,13 @@ get "/terms/new" do
   haml :terms_new
 end
 
+#create new
+post "/terms/new" do
+  term = Term.create(params)
+
+  redirect "/terms/#{term.id}"
+end
+
 #show
 get "/terms/:id" do
   id = params["id"]
@@ -41,7 +48,7 @@ put '/terms/:id' do
   id = params["id"]
   term = Term.find_by(id: id)
   if term
-    term.update_attributes(params[:term])
+    term.update_attributes(params["term"])
     redirect "/terms/#{term.id}"
   else
     redirect "/"

@@ -1,13 +1,13 @@
-%h1 This is the homepage!
+%h1.center Homepage
 %h2 Five most recent terms!
-%ul#selector
+%ul.grey
   -@lastfive.each do |term|
     %li
       %a(href = "/terms/#{term.id}")
         =term.name
-%p
+%p.link
   %a(href = "/terms")
     List of terms
-
-%a(href = "/terms/new")
-  Enter a new term
+%p.link
+  %a(href = "/terms/new")
+    Enter a new term
