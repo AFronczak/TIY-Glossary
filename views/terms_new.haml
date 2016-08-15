@@ -1,21 +1,21 @@
-%h1 Enter a new term
+%h1 Enter a New Term
 %form(action="/term" method="post")
   %ul
     %li
       %label name
-      %input
+      %textarea(rows="1" cols="50")
     %li
       %label definition
-      %input
+      %textarea(rows="3" cols="50")
     %li
       %label author
-      %input
+      %textarea(rows="1" cols="50")
     %li
       %label web_link
-      %input
+      %textarea(rows="1" cols="50")
     %li
       %label category_id
-      %input
+      %textarea(rows="1" cols="50")
   %input(type="submit")
-%a(href = "/")
+%a.link(href = "/")
   Home

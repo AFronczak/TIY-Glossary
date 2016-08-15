@@ -1,0 +1,8 @@
+%ul
+  -@categories.each do |term|
+    %li
+      %a(href = "/categories/#{category.id}")
+        =category.name
+.link
+%a(href = "/")
+  Home

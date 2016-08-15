@@ -6,6 +6,9 @@ require 'sinatra'
 
 require 'sinatra/reloader' if development?
 
+after do
+  ActiveRecord::Base.connection.close
+end
 
 get "/" do
   @terms = Term.all
@@ -35,7 +38,7 @@ post "/terms/new" do
   redirect "/terms/#{term.id}"
 end
 
-#show
+#show term
 get "/terms/:id" do
   id = params["id"]
   @term = Term.find_by(id: id)
@@ -61,4 +64,19 @@ get "/terms/:id/edit" do
   @term = Term.find_by(id: id)
 
   haml :terms_edit
+end
+
+#show categories
+get "/categories" do
+  @categories = Category.all
+
+  haml :categories
+end
+
+#show category
+get "/category/:id" do
+  id = params["id"]
+  @category = Category.find_by(id: id)
+
+  haml :categories_show
 end

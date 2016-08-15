@@ -1,6 +1,6 @@
 %h1
   =@term.name
-%ul
+%ul.grey
   %li
     %p Definition:
     =@term.definition
@@ -13,9 +13,9 @@
   %li
     %p Category ID:
     =@term.category_id
-%p
+%p.link
   %a(href = "/terms/#{@term.id}/edit")
     edit
-%p
+%p.link
   %a(href = "/")
     Home
